@@ -2,6 +2,7 @@
     padding: 0;
     margin: 0;
     box-sizing: border-box;
+    -webkit-text-size-adjust: 100%;
 }
 body{
     background-color: #1e1e1e;
@@ -9,7 +10,7 @@ body{
     color: #a0a0a0;
     line-height: 1.6; 
 }
-.container{
+.main-container{
     display: grid;
     max-width: 1200px;
     grid-template-columns: 350px 1fr;
@@ -26,6 +27,14 @@ body{
     padding: 40px;
     position: sticky;
     top: 40px;
+}
+    /* Main Content */
+.main-content{
+    /* height: 90vh; */
+    background-color: #2a2a2a;
+    border: 1px solid #3a3a3a;
+    border-radius: 16px;
+    padding: 40px;
 }
 
 /* <!--Profile--> */
@@ -73,7 +82,7 @@ body{
     text-decoration: none;
 }
 .email,.phone{
-    margin-bottom: 10px;
+    margin-bottom: 15px;
 }
 
 
@@ -95,15 +104,7 @@ body{
 .social img:hover{
     filter: grayscale(0) invert(0);
 }
-
-    /* Main Content */
-.main-content{
-    /* height: 90vh; */
-    background-color: #2a2a2a;
-    border: 1px solid #3a3a3a;
-    border-radius: 16px;
-    padding: 40px;
-} 
+ 
 
 /* navigation */
 #navigation{
@@ -144,6 +145,7 @@ nav a {
 }
 .content{
     text-align: justify;
+    color: #a0a0a0;
 }
     /*Skills*/
 .grid-container{
@@ -178,7 +180,7 @@ nav a {
 
 /* educations */
 #education{
-    margin-top: 20px;
+    margin-top: 30px;
 }
 .edtech{
     position: relative;
@@ -215,7 +217,7 @@ nav a {
     border: 3px solid #FFBF00;
     border-radius: 50%;
     position: absolute;
-    top: 0px;
+    top: 5px;
     left: 0px;
     z-index: 5;
 }
@@ -272,7 +274,7 @@ nav a {
     margin-right: 5px;
 }
 @media screen and (max-width:1200px) {
-    .container{
+    .main-container{
         grid-template-columns: 1fr;
         padding: 20px;
     }
@@ -284,11 +286,12 @@ nav a {
 }
 
 @media screen and (max-width:750px) {
+    
     .project-container{
-        grid-template-columns: 1fr;
+        grid-template-columns: 1fr  ;
     }
 
-    #navigation nav {
+    #navigation nav{
         /* Adjust nav for smaller screens */
         justify-content: center;
         flex-wrap: wrap;
@@ -298,5 +301,24 @@ nav a {
         display: flex;
         justify-content: center;
         gap: 40px;
+    }
+}
+/* for phone */
+@media screen and (max-width:480px) {
+
+    .sidebar{
+        flex-direction: column;
+        gap: 15px;
+        text-align: center;
+    }
+
+    #navigation nav{
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .project-container{
+        grid-template-columns: 1fr;
+        gap: 20px;
     }
 }
